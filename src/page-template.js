@@ -20,7 +20,7 @@ function generateHTML(data) {
                 <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
                     <div class="card-header bg-primary text-white">
                         <p>Jim</p>
-                        <p>Sales</p>
+                        <p>Manager</p>
                     </div>
                     <div>
                         <ul class="list-group col">
@@ -33,7 +33,7 @@ function generateHTML(data) {
                 <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
                     <div class="card-header bg-primary text-white">
                         <p>Dwight</p>
-                        <p>Sales</p>
+                        <p>Manager</p>
                     </div>
                     <div>
                         <ul class="list-group col">
@@ -46,7 +46,7 @@ function generateHTML(data) {
                 <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
                     <div class="card-header bg-primary text-white">
                         <p>Pam</p>
-                        <p>Sales</p>
+                        <p>Manager</p>
                     </div>
                     <div>
                         <ul class="list-group col">
@@ -59,7 +59,7 @@ function generateHTML(data) {
                 <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
                     <div class="card-header bg-primary text-white">
                         <p>Oscar</p>
-                        <p>Accounting</p>
+                        <p>Manager</p>
                     </div>
                     <div>
                         <ul class="list-group col">
@@ -72,7 +72,7 @@ function generateHTML(data) {
                 <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
                     <div class="card-header bg-primary text-white">
                         <p>Kevin</p>
-                        <p>Accounting</p>
+                        <p>Manager</p>
                     </div>
                     <div>
                         <ul class="list-group col">
