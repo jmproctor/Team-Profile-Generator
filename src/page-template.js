@@ -15,75 +15,11 @@ function generateHTML(data) {
         <header class="bg-danger py-5">
             <h1 class="fs-1 text-white text-center">My Team</h1>
         </header>
+
         <div class="d-flex container justify-content-center">
-            <div class="d-flex card-deck col-9 flex-wrap justify-content-center align-self-center">
-                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                    <div class="card-header bg-primary text-white">
-                        <p>Jim</p>
-                        <p>Manager</p>
-                    </div>
-                    <div>
-                        <ul class="list-group col">
-                            <li class="list-group-item">ID: </li>
-                            <li class="list-group-item">Email: </li>
-                            <li class="list-group-item">Office Number: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                    <div class="card-header bg-primary text-white">
-                        <p>Dwight</p>
-                        <p>Manager</p>
-                    </div>
-                    <div>
-                        <ul class="list-group col">
-                            <li class="list-group-item">ID: </li>
-                            <li class="list-group-item">Email: </li>
-                            <li class="list-group-item">Office Number: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                    <div class="card-header bg-primary text-white">
-                        <p>Pam</p>
-                        <p>Manager</p>
-                    </div>
-                    <div>
-                        <ul class="list-group col">
-                            <li class="list-group-item">ID: </li>
-                            <li class="list-group-item">Email: </li>
-                            <li class="list-group-item">Office Number: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                    <div class="card-header bg-primary text-white">
-                        <p>Oscar</p>
-                        <p>Manager</p>
-                    </div>
-                    <div>
-                        <ul class="list-group col">
-                            <li class="list-group-item">ID: </li>
-                            <li class="list-group-item">Email: </li>
-                            <li class="list-group-item">Office Number: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                    <div class="card-header bg-primary text-white">
-                        <p>Kevin</p>
-                        <p>Manager</p>
-                    </div>
-                    <div>
-                        <ul class="list-group col">
-                            <li class="list-group-item">ID: </li>
-                            <li class="list-group-item">Email: </li>
-                            <li class="list-group-item">Office Number: </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div class="d-flex card-deck col-9 flex-wrap justify-content-center align-self-center"></div>
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
     </html>
