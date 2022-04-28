@@ -37,6 +37,7 @@ THEN I exit the application, and the HTML is generated
 ## Links/Screenshots
 
 Github: https://github.com/jmproctor/Team-Profile-Generator
+
 Walkthrough Video:
 
 ![Screenshot 2022-04-27 203007](https://user-images.githubusercontent.com/92322247/165659206-1cd11cdd-b5a2-4bd4-8791-a5b9dfc9e221.png)
