@@ -9,11 +9,11 @@ function generateHTML(data) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/a6614c4a77.js" crossorigin="anonymous"></script>
-        <title>Our Team Profile</title>
+        <title>The Team</title>
     </head>
     <body>
         <header class="bg-danger py-5">
-            <h1 class="fs-1 text-white text-center">My Team</h1>
+            <h1 class="fs-1 text-white text-center">The Team</h1>
         </header>
 
         <div class="d-flex container justify-content-center">
