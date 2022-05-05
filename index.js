@@ -4,16 +4,18 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-
+const code = [];
+const info = [];
+const whichRole = [];
 const employees = [];
 function app() {
     createHTML();
-    addEmployee();
+    newEmployee();
 };
-function addEmployee() {
+function newEmployee() {
     inquirer
         .prompt([{
-            message: "What is the employee's name?",
+            message: "What is the name of your employee?",
             name: "name"
         },
         {
@@ -27,7 +29,7 @@ function addEmployee() {
             ]
         },
         {
-            message: "What is the employee's ID number?",
+            message: "What is their ID number?",
             name: "id"
         },
         {
@@ -53,27 +55,29 @@ function addEmployee() {
             {
                 message: "Do you want to add another employee?",
                 type: "list",
-                name: "addEmployee",
+                name: "anotherEmployee",
                 choices: [
                     "yes",
                     "no"
                 ]
             }
         ])
-        .then(function({ roleDetails, addEmployee }) {
-            let newEmployee = '';
+        .then(function({ roleDetails, anotherEmployee }) {
+            let employeeRole = '';
             if (role === 'Manager') {
-                newEmployee = new Manager(name, id, email, roleDetails);
+                employeeRole = new Manager(name, id, email, roleDetails);
             } else if (role === 'Engineer') {
-                newEmployee = new Engineer(name, id, email, roleDetails);
+                employeeRole = new Engineer(name, id, email, roleDetails);
             } else {
-                newEmployee = new Intern(name, id, email, roleDetails);
+                employeeRole = new Intern(name, id, email, roleDetails);
             }
-            employees.push(newEmployee);
-            createCard(newEmployee)
+            info.push(roleDetails);
+            whichRole.push(roleInfo);
+            employees.push(employeeRole);
+            createCard(employeeRole)
             .then(function() {
-                if (addEmployee === 'yes') {
-                    addEmployee();
+                if (anotherEmployee === 'yes') {
+                    newEmployee();
                 } else {
                     stopHTML();
                 }
@@ -82,7 +86,7 @@ function addEmployee() {
     });
 };
 function createHTML() {
-    const code = `
+    let code = `
     
 <!DOCTYPE html>
 <html lang="en">
@@ -107,68 +111,38 @@ function createHTML() {
         }
     });
 }
+
 function createCard(employee) {
     return new Promise(function(resolve, reject) {
         const name = employee.getName();
         const role = employee.getRole();
         const id = employee.getId();
         const email = employee.getEmail();
-        let code = '';
-        if (role === 'Manager') {
-            const officeNumber = employee.getOfficeNumber();
-            code = 
-            `
-            <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                <div class="card-header bg-primary text-white">
-                    <p>${name}</p>
-                    <p><i class="fas fa-mug-hot"></i> Manager</p>
-                </div>
-                <div>
-                    <ul class="list-group col">
-                        <li class="list-group-item">ID: ${id}</li>
-                        <li class="list-group-item">Email: ${email}</li>
-                        <li class="list-group-item">Office Number: ${officeNumber}</li>
-                    </ul>
-                </div>
-            </div>
-            `;
-        } else if (role === 'Engineer') {
-            const github = employee.getGithub();
-            code = 
-            `
-            <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                <div class="card-header bg-primary text-white">
-                    <p>${name}</p>
-                    <p><i class="fas fa-glasses"></i> Engineer</p>
-                </div>
-                <div>
-                    <ul class="list-group col">
-                        <li class="list-group-item">ID: ${id}</li>
-                        <li class="list-group-item">Email: ${email}</li>
-                        <li class="list-group-item">Github: ${github}</li>
-                    </ul>
+        const roleInfo = whichRole
+        const roleDetails = info
+
+        let code = `
+
+        <div class="d-flex container justify-content-center">
+            <div class="d-flex card-deck col-9 flex-wrap justify-content-center align-self-center">
+                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
+                    <div class="card-header">
+                        <img class="mw-100 mh-100" src="../images/engineer.jpg">
+                    </div>
+                    <div>
+                        <p>${name}</p>
+                        <p><i class="fas fa-microchip"></i> Engineer</p>
+                        <ul class="list-group col">
+                            <li class="list-group-item">ID: ${id}</li>
+                            <li class="list-group-item">Email: ${email}</li>
+                            <li class="list-group-item">${roleInfo}: ${roleDetails}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            `;
-        } else {
-            const school = employee.getSchool();
-            code =
-            `
-            <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
-                <div class="card-header bg-primary text-white">
-                    <p>${name}</p>
-                    <p><i class="fas fa-user-graduate"></i> Intern</p>
-                </div>
-                <div>
-                    <ul class="list-group col">
-                        <li class="list-group-item">ID: ${id}</li>
-                        <li class="list-group-item">Email: ${email}</li>
-                        <li class="list-group-item">School: ${school}</li>
-                    </ul>
-                </div>
-            </div>
-            `
-        }
+        </div>
+        `
+        ;
         console.log('New employee added!');
         fs.appendFile('./dist/team_profile.html', code, function(err) {
             if (err) {

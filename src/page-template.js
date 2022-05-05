@@ -17,7 +17,22 @@ function generateHTML(data) {
         </header>
 
         <div class="d-flex container justify-content-center">
-            <div class="d-flex card-deck col-9 flex-wrap justify-content-center align-self-center"></div>
+            <div class="d-flex card-deck col-9 flex-wrap justify-content-center align-self-center">
+                <div class="card rounded shadow m-4 col-3" style="width: 15rem;">
+                    <div class="card-header">
+                        <img class="mw-100 mh-100" src="../images/engineer.jpg">
+                    </div>
+                    <div>
+                        <p>${employeeRole.name}</p>
+                        <p><i class="fas fa-microchip"></i> Engineer</p>
+                        <ul class="list-group col">
+                            <li class="list-group-item">ID: ${employeeRole.id}</li>
+                            <li class="list-group-item">Email: ${employeeRole.email}</li>
+                            <li class="list-group-item">${roleInfo}: ${employeeRole.roleDetails}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
